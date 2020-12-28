@@ -2,9 +2,20 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
 
+## Snowpack
+
+This project is used to demo [angular-snowpack-plugin](https://www.npmjs.com/package/angular-snowpack-plugin). Changes required to convert a fresh `ng new <project_name>` project can be seen in the commits of this repository.
+
+### Important notes
+
+If facing strange errors while running `snowpack dev`, please run `snowpack build` first, and determine if the same errors happen on the built version.
+If errors only happen in `snowpack dev`, try running `snowpack --reload` to clear development cache.
+
+This is because `ngcc` has to build @angular packages that your project uses into ivy compatible, and `snowpack dev` converts these packages into web_modules before they were run through `ngcc` by the plugin, and `snowpack dev` does not clear cache even after `ngcc` finishes.
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -12,7 +23,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `npm build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
