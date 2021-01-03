@@ -4,17 +4,14 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    public: "/",
-    src: "/src",
+    src: "/",
   },
-  install: ["@angular/common"],
   plugins: [
     [
       "angular-snowpack-plugin",
       {
         src: "src",
-        logLevel: "normal",
-        tsConfig: "tsconfig.app.json",
+        angularJson: "angular.json",
         ngccTargets: ["@angular/router"],
       },
     ],
